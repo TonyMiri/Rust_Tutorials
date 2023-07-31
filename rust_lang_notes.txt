@@ -1,0 +1,15 @@
+create a project using 'cargo new'.
+
+build a project using 'cargo build'. <-- Do not use this. Use 'cargo run'
+
+build and run a project in one step using 'cargo run'.
+
+build a project without producing a binary 
+   to check for errors using 'cargo check'.
+
+Cargo stores build output in the ./target/debug directory
+
+build for release with 'cargo build --release'
+
+'cargo doc --open' will generate docs for all dependencies in your 
+    project as a single webpage with a navigation bar. Very nice
