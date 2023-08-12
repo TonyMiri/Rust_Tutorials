@@ -1,4 +1,9 @@
-create a project using 'cargo new'.
+create a project using 'cargo new project_name'.
+
+Can create a new project without intializing a git repo with
+"cargo new my_project_name --vcs none"
+
+The commands above will create a new folder 
 
 build a project using 'cargo build'. <-- Do not use this. Use 'cargo run'
 
@@ -11,5 +16,49 @@ Cargo stores build output in the ./target/debug directory
 
 build for release with 'cargo build --release'
 
+Declare dependencies in the ./Cargo.toml file
+
 'cargo doc --open' will generate docs for all dependencies in your 
     project as a single webpage with a navigation bar. Very nice
+
+Can have many files in the same project like this
+
+My_project
+   src
+      bin
+         file1.rs
+         file2.rs
+         file3.rs
+
+Then we can compile with `cargo run --bin file2`, for example
+
+Variables are immutable by default
+
+Mutable variable using the 'mut' keyword:
+
+'let mut x = 5;'
+
+Shadowing allows for immutable variables to be reassigned but then they
+are immutable after reassignment
+
+let x = 5;
+
+let x = x + 1; 
+
+Compiler can guess data types but sometimes needs explicit
+let guess: u32 = "42".parse().expect("Not a number!");
+
+4 scalar data types (represent a single value):
+integers, floats, bools, chars
+
+Integers:
+8,16,32,64,128, arch
+example: i8 for Signed or u8 for unsigned
+
+Each signed variant can store numbers from
+-(2^n - 1) to 2^(n - 1) - 1 inclusive,
+where n is the number of bits that variant uses.
+So an i8 can store numbers from -(2^7) to 2^7 - 1,
+which equals -128 to 127. Unsigned variants can store
+numbers from 0 to 2^n - 1, so a u8 can store numbers
+from 0 to 2^8 - 1, which equals 0 to 255.
